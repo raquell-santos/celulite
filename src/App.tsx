@@ -1,7 +1,7 @@
-import Home from './ui/page/Home'
+import Quiz from './ui/page/Quiz'
 
 export default function App() {
   return (
-    <Home/>
+    <Quiz/>
   )
 }

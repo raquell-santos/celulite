@@ -8,7 +8,7 @@ import Body from '../../fragments/Body';
 import {  Button } from "@material-ui/core";
 
 
-export default function Home() {
+export default function Quiz() {
   const [activeStep, setActiveStep] = useState(0);
 
   const handleNext = () => {

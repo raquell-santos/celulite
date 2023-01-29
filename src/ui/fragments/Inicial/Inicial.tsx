@@ -13,6 +13,7 @@ export default function Inicial() {
       <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5">
           <Title>Acabe com suas celulites</Title>
           <SubTitle>Você é único, e sua solução também</SubTitle>
+          <h2 className="text-white mb-3 text-4xl font-bold tracking-wide"> Qual sua idade?</h2>
 
           <div className="flex flex-col gap-x-3.5 gap-y-6">
             <div  className="flex gap-x-3.5 ">
