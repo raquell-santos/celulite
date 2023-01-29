@@ -32,7 +32,7 @@ export default function Quiz() {
           </Container>
         </div>
           <div className="absolute fixed w-full w-screen bottom-0 flex justify-center ">
-          <div className="w-full max-w-xs">
+          {/* <div className="w-full max-w-xs"> */}
             <Button
               variant="contained"
               color='secondary'
@@ -41,7 +41,7 @@ export default function Quiz() {
             >  
               <span > Próximo </span>  
             </Button>
-          </div>
+          {/* </div> */}
         </div>
         </div>
   )
