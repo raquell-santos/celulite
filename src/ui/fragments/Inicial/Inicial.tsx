@@ -1,6 +1,7 @@
 
 import SubTitle from "../../components/SubTitle";
 import Title from "../../components/Title";
+import Question from "../../components/Question";
 import Card from '../../components/Card/Primary';
 
 import TEEN from '../../assets/adolescente.png'
@@ -10,10 +11,10 @@ import OLD from '../../assets/idosa.png'
 
 export default function Inicial() {
   return (
-      <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5">
+      <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5 mt-8">
           <Title>Acabe com suas celulites</Title>
           <SubTitle>Você é único, e sua solução também</SubTitle>
-          <h2 className="text-white mb-3 text-4xl font-bold tracking-wide"> Qual sua idade?</h2>
+          <Question> Qual sua idade?</Question>
 
           <div className="flex flex-col gap-x-3.5 gap-y-6">
             <div  className="flex gap-x-3.5 ">

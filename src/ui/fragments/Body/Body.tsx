@@ -3,6 +3,8 @@ import BACK_BODY from '../../assets/body-back-120.png'
 import ImageMapper from 'react-image-mapper';
 import { Chip } from '@material-ui/core';
 import { Check }  from  '@material-ui/icons';
+import Question from '../../components/Question';
+import SubTitle from '../../components/SubTitle';
 
 export default function Body() {
   const FRONT_OPTIONS = ['barriga', 'coxas']
@@ -87,6 +89,10 @@ export default function Body() {
 
     return (
       <div className="container">
+        <div className='flex flex-col justify-center mb-4 text-center mt-8'>
+          <Question> Quais são as partes do seu corpo que as estrias mais te encomodam?</Question>
+          <SubTitle>Você é único, e sua solução também</SubTitle>
+        </div>
         <div className='flex justify-around'>
         <ImageMapper 
           src={FRONT_BODY}  
