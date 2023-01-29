@@ -11,7 +11,7 @@ import OLD from '../../assets/idosa.png'
 
 export default function Inicial() {
   return (
-      <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5 mt-8">
+      <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5 mt-4">
           <Title>Acabe com suas celulites</Title>
           <SubTitle>Você é único, e sua solução também</SubTitle>
           <Question> Qual sua idade?</Question>

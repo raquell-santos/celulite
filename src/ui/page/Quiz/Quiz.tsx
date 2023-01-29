@@ -31,14 +31,12 @@ export default function Quiz() {
             {activeStep === 2 && <Foods />}
           </Container>
         </div>
-        <div className="h-12"></div>
-          <div className="absolute fixed w-full w-screen -bottom-7 flex justify-center ">
+          <div className="absolute fixed w-full w-screen bottom-0 flex justify-center ">
           <div className="w-full max-w-xs">
             <Button
               variant="contained"
               color='secondary'
               onClick={handleNext}
-              size='large'
               fullWidth
             >  
               <span > Próximo </span>  

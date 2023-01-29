@@ -18,7 +18,7 @@ export default function Foods() {
           <SubTitle>Você é único, e sua solução também</SubTitle>
         </div>
 
-          <div className="flex flex-col gap-x-3.5 gap-y-6">
+          <div className="flex flex-col gap-x-3.5 gap-y-6 mb-8">
               <Card photo={ALCOOL} text='Bebidas alcoólicas'/>
               <Card photo={BANANA} text='Banana'/>
               <Card photo={LEITE} text='Leite'/>

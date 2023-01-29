@@ -89,8 +89,8 @@ export default function Body() {
 
     return (
       <div className="container">
-        <div className='flex flex-col justify-center mb-4 text-center mt-8'>
-          <Question> Quais são as partes do seu corpo que as estrias mais te encomodam?</Question>
+        <div className='flex flex-col justify-center text-center mt-4'>
+          <Question> Quais as partes do seu corpo que as estrias mais te encomodam?</Question>
           <SubTitle>Você é único, e sua solução também</SubTitle>
         </div>
         <div className='flex justify-around'>
@@ -102,20 +102,7 @@ export default function Body() {
           map={MAP}
           width={120}
         />
-
-<div className='-mt-3'>
-        <ImageMapper 
-          src={BACK_BODY}  
-          onClick={(area) => {
-            console.log(area)
-          }}
-          map={MAP_BACK}
-          width={120}
-        />
-</div>
-</div>
-
-      <div className='h-6 h-full flex gap-x-3 justify-center pt-4'>
+              <div className='h-6 h-full flex flex-col justify-center pt-4 mb-12 gap-y-3'>
         <Chip
           color='secondary'
           label="Barriga"
@@ -135,6 +122,20 @@ export default function Body() {
           icon={<Check />}
         />
         </div>
+
+<div className='-mt-3'>
+        <ImageMapper 
+          src={BACK_BODY}  
+          onClick={(area) => {
+            console.log(area)
+          }}
+          map={MAP_BACK}
+          width={120}
+        />
+</div>
+</div>
+
+
         
       </div>
     )
