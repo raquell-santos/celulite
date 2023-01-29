@@ -1,34 +1,20 @@
-import { MobileStepper, Button, LinearProgress } from "@material-ui/core";
-import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
+import { KeyboardBackspace } from '@material-ui/icons';
+import { LinearProgress } from "@material-ui/core";
 import { IStepper } from "./interface";
 
-export default function Stepper({activeStep = 1, steps, handleNext, handleBack}: IStepper) {
-
+export default function Stepper({activeStep, steps, handleBack}: IStepper) {
   const value = (activeStep / steps)*100;
 
   return (
-
-    <div className="absolute w-full top-10 px-5">
+    <div className="absolute w-full top-2 mb-5 px-5">
+      <div className={`mb-2 h-8 ${!activeStep ? 'invisible': 'visible'}`} >
+        <KeyboardBackspace 
+          onClick={handleBack}
+          fontSize="large" 
+          style={{color: 'white', cursor: 'pointer'}}
+        />  
+      </div>
       <LinearProgress variant="determinate" value={value}  color="secondary"/>
     </div>
-    // <MobileStepper
-    //   variant="progress"
-    //   color="black"
-    //   steps={6}
-    //   position="top"
-    //   activeStep={activeStep}
-    //   nextButton={
-    //     <Button size="small" onClick={handleNext} disabled={activeStep === steps -1} >
-          
-    //       {<KeyboardArrowRight />}
-    //     </Button>
-    //   }
-    //   backButton={
-    //     <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-    //       {<KeyboardArrowLeft />}
-         
-    //     </Button>
-    //   }
-    // />
   );
 }

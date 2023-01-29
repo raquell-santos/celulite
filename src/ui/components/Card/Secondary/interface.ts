@@ -1,4 +1,4 @@
-export interface ICard {
+export interface ISecondary {
     photo: string;
     text: string;
 }

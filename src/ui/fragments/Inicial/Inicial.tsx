@@ -1,14 +1,14 @@
 
 import SubTitle from "../../components/SubTitle";
 import Title from "../../components/Title";
-import Card from '../../components/Card';
+import Card from '../../components/Card/Primary';
 
 import TEEN from '../../assets/adolescente.png'
 import ADULT from '../../assets/adulta.png'
 import MATURE from '../../assets/mais-adulta.png'
 import OLD from '../../assets/idosa.png'
 
-export default function Introduction() {
+export default function Inicial() {
   return (
       <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5">
           <Title>Acabe com suas celulites</Title>
