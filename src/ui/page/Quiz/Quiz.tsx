@@ -22,7 +22,7 @@ export default function Quiz() {
   };
 
   return (
-    <div className="pt-8 pb-8 bg-slate-800 h-screen flex flex-col  ">
+    <div className="pt-8 pb-8 bg-slate-800 h-screen flex flex-col ">
       <Stepper activeStep={activeStep} steps={6} handleNext={handleNext} handleBack={handleBack}/>
       <Container>
         {activeStep === 0 && <Inicial/>}
