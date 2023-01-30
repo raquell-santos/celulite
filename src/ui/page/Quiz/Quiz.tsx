@@ -2,13 +2,14 @@ import { useState } from "react";
 import Container from "../../components/Container";
 import Inicial from "../../fragments/Inicial";
 import Foods from "../../fragments/Foods";
+import Quiz from "../../fragments/Quiz"
 
 import Stepper from '../../fragments/Stepper';
 import Body from '../../fragments/Body';
 import {  Button } from "@material-ui/core";
 
 
-export default function Quiz() {
+export default function QuizPage() {
   const [activeStep, setActiveStep] = useState(0);
 
   const handleNext = () => {
@@ -29,6 +30,8 @@ export default function Quiz() {
             {activeStep === 0 && <Inicial/>}
             {activeStep === 1 && <Body />}
             {activeStep === 2 && <Foods />}
+            {activeStep === 3 && <Quiz question={'Qual o seu peso?'}/>}
+            {activeStep === 4 && <Quiz question={'Qual a sua altura?'}/>}
           </Container>
         </div>
           <div className="absolute fixed w-full w-screen bottom-0 flex justify-center ">

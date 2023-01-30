@@ -14,7 +14,7 @@ export default function Foods() {
   return (
       <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5 mt-8">
         <div className='flex flex-col justify-center mb-4 text-center'>
-          <Question> Quais os alimentos abaixo você custuma consumir? </Question>
+          <Question> Quais dos alimentos abaixo você não gosta? </Question>
           <SubTitle>Você é único, e sua solução também</SubTitle>
         </div>
 
