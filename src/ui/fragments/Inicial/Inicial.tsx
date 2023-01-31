@@ -38,20 +38,41 @@ export default function Inicial({handleStep}) {
           Acabe com suas celulites
         </h1>
         <Titles> Qual sua idade? </Titles>
-          <div className="flex flex-wrap gap-x-4 gap-y-7 justify-center">
-              {cards.map((card, index) => {
-                return (
-                  <>
-                    <Card
-                      photo={card.photo} 
-                      text={card.text} 
-                      id={card.id} 
-                      handleClick={handleClick}  
-                      isSelected={selected === card.id}
-                    />
-                  </>
-                )
-              })}
+          <div className="flex flex-col gap-y-7 justify-center">
+            <div className='flex gap-x-4 '>
+              <Card
+                photo={cards[0].photo} 
+                text={cards[0].text} 
+                id={cards[0].id} 
+                handleClick={handleClick}  
+                isSelected={selected === cards[0].id}
+              />
+
+              <Card
+                photo={cards[1].photo} 
+                text={cards[1].text} 
+                id={cards[1].id} 
+                handleClick={handleClick}  
+                isSelected={selected === cards[1].id}
+              />
+            </div>
+            <div className='flex gap-x-4 '>
+              <Card
+                  photo={cards[2].photo} 
+                  text={cards[2].text} 
+                  id={cards[2].id} 
+                  handleClick={handleClick}  
+                  isSelected={selected === cards[2].id}
+                />
+
+                <Card
+                  photo={cards[3].photo} 
+                  text={cards[3].text} 
+                  id={cards[3].id} 
+                  handleClick={handleClick}  
+                  isSelected={selected === cards[3].id}
+              />
+            </div>
           </div>
       </div>
   )

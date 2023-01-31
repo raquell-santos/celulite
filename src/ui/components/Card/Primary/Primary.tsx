@@ -3,7 +3,7 @@ import { IPrimary} from './interface'
 
 export default function Primary({photo, text, isSelected = false, handleClick, id}: IPrimary) {
   return (
-    <div className=" flex flex-col w-40">
+    <div className="flex flex-col w-full">
       <div 
         onClick={() => handleClick(id)}
         className={`
