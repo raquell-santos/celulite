@@ -1,35 +1,26 @@
-
-
 import { CheckCircle } from '@material-ui/icons'
-import { useState } from 'react';
 import { IPrimary} from './interface'
-export default function Primary({photo, text, currentSelected = false}: IPrimary) {
-  const [selected, setSelected] = useState<boolean>(currentSelected);
 
-  const handleClick = () => {
-    setSelected(!selected)
-  }
-  
+export default function Primary({photo, text, isSelected = false, handleClick, id}: IPrimary) {
   return (
-    <div className="w-full flex flex-col">
+    <div className=" flex flex-col w-48">
       <div 
-        onClick={handleClick}
+        onClick={() => handleClick(id)}
         className={`
           group rounded-t border-material-pink border-2 h-28 w-full shadow-md shadow-slate-200 flex justify-center 
           hover:cursor-pointer hover:bg-slate-900 relative
-          ${selected ? 'bg-slate-900': ''}
+          ${isSelected ? 'bg-slate-900': ''}
         `}
       >
-        {selected && <CheckCircle style={{position: 'absolute', top: 8, right: 12}} color='secondary'/>}
+        {isSelected && <CheckCircle style={{position: 'absolute', top: 8, right: 12}} color='secondary'/>}
           <div className='flex flex-col'>
-            
             <img 
               src={photo} 
               alt="test" 
               className={`
                 h-full 
                 group-hover:scale-125 group-hover:-translate-y-3
-                ${selected ? 'scale-125 -translate-y-3': ''}
+                ${isSelected ? 'scale-125 -translate-y-3': ''}
               `}/>
           </div>
       </div>
