@@ -7,7 +7,7 @@ export default function Quiz({question, children}) {
     <>
       <div className='flex flex-col justify-center mb-4 text-center'>
         <Question> {question} </Question>
-        <SubTitle>Você é único, e sua solução também</SubTitle>
+        <SubTitle>Você é unica, a sua solução também!</SubTitle>
       </div>
       {children}
     </>

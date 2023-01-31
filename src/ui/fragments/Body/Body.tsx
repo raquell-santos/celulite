@@ -90,8 +90,8 @@ export default function Body() {
     return (
       <div className="container">
         <div className='flex flex-col justify-center text-center mt-4'>
-          <Question> Quais as partes do seu corpo que as estrias mais te encomodam?</Question>
-          <SubTitle>Você é único, e sua solução também</SubTitle>
+          <Question> Quais partes do seu corpo você não deseja mais ter celulite? </Question>
+          <SubTitle> Você é unica, a sua solução também! </SubTitle>
         </div>
         <div className='flex justify-around'>
         <ImageMapper 

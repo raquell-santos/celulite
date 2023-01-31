@@ -2,8 +2,9 @@ import { useState } from "react";
 import Container from "../../components/Container";
 import Inicial from "../../fragments/Inicial";
 import Foods from "../../fragments/Foods";
-import Quiz from "../../fragments/Quiz";
+import Height from "../../fragments/Height";
 import Weight from '../../fragments/Weight';
+import Drinks from '../../fragments/Drinks';
 
 import Stepper from '../../fragments/Stepper';
 import Body from '../../fragments/Body';
@@ -29,9 +30,12 @@ export default function QuizPage() {
           <Stepper activeStep={activeStep} steps={6} handleNext={handleNext} handleBack={handleBack}/>
           <Container>
             {activeStep === 0 && <Inicial/>}
-            {activeStep === 1 && <Body />}
-            {activeStep === 2 && <Foods />}
-            {activeStep === 3 && <Weight />}
+            {activeStep === 1 && <Height/>}
+            {activeStep === 2 && <Weight />}
+            {activeStep === 3 && <Body />}
+            {activeStep === 4 && <Foods />}
+            {activeStep === 5 && <Drinks />}
+ 
           </Container>
         </div>
           <div className="absolute fixed w-full w-screen bottom-0 flex justify-center ">
