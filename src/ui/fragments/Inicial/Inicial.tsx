@@ -5,10 +5,10 @@ import TEEN from '../../assets/adolescente.png'
 import ADULT from '../../assets/adulta.png'
 import MATURE from '../../assets/mais-adulta.png'
 import OLD from '../../assets/idosa.png'
-import { useCallback, useState } from "react";
+import { useState } from "react";
 
-export default function Inicial({handleStep}) {
-  const [selected, setSelected] = useState<number>(0)
+export default function Inicial({age, handleStep}) {
+  const [selected, setSelected] = useState<number>(age.id)
 
   const handleClick = (id: number): void => {
     setSelected(id)
@@ -20,6 +20,7 @@ export default function Inicial({handleStep}) {
         age: {
           value: selectedCard[0].text,
           photo: selectedCard[0].photo,
+          id: selectedCard[0].id,
         }
       })
     }

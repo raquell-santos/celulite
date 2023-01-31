@@ -19,10 +19,9 @@ export default function QuizPage() {
     age: {
       value: '',
       photo: '',
+      id: 0,
     },
   })
-
-  console.log('data', data)
 
   const handleClick = (info) => {
     setData((prevState) => {
@@ -49,7 +48,7 @@ export default function QuizPage() {
         <div className="pt-8 pb-8 h-screen flex flex-col ">
           <Stepper activeStep={activeStep} steps={6} handleNext={handleNext} handleBack={handleBack}/>
           <Container>
-            {activeStep === 0 && <Inicial handleStep={handleClick}/>}
+            {activeStep === 0 && <Inicial age={data.age} handleStep={handleClick}/>}
             {activeStep === 1 && <Height/>}
             {activeStep === 2 && <Weight />}
             {activeStep === 3 && <Body />}
