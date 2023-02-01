@@ -4,3 +4,20 @@
     width: 120px;
     text-align: center;
 }
+
+.MuiSlider-markLabel {
+    color: white !important;
+}
+
+.MuiSlider-rail {
+    width: 12px;
+}
+
+.image-height {
+    width: 80px;
+
+}
+
+.vertical-slider {
+    margin-left: -20px;
+}

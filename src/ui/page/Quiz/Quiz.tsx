@@ -26,7 +26,7 @@ export default function QuizPage() {
       photo: '',
       id: 0,
     },
-    height: '',
+    height: 1.6,
     weight: '',
   })
 
