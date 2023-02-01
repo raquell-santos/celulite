@@ -19,8 +19,8 @@ export default function Primary({photo, text, isSelected = false, handleClick, i
               alt="test" 
               className={`
                 h-full 
-                group-hover:scale-125 group-hover:-translate-y-3
-                ${isSelected ? 'scale-125 -translate-y-3': ''}
+                group-hover:scale-110 group-hover:-translate-y-2
+                ${isSelected ? 'scale-110 -translate-y-2': ''}
               `}/>
           </div>
       </div>
