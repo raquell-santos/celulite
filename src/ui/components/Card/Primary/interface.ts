@@ -4,4 +4,5 @@ export interface IPrimary {
     isSelected?: boolean;
     handleClick: any;
     id: number;
+    height?: string;
 }

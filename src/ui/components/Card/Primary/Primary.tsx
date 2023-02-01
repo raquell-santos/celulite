@@ -1,13 +1,13 @@
 import { CheckCircle } from '@material-ui/icons'
 import { IPrimary} from './interface'
 
-export default function Primary({photo, text, isSelected = false, handleClick, id}: IPrimary) {
+export default function Primary({photo, text, isSelected = false, handleClick, id, height='28'}: IPrimary) {
   return (
     <div className="flex flex-col w-full">
       <div 
         onClick={() => handleClick(id)}
         className={`
-          group rounded-t border-material-pink border-2 h-28 w-full shadow-md shadow-slate-200 flex justify-center 
+          group rounded-t border-material-pink border-2 h-${height} w-full shadow-md shadow-slate-200 flex justify-center 
           hover:cursor-pointer hover:bg-slate-900 relative
           ${isSelected ? 'bg-slate-900': ''}
         `}

@@ -21,6 +21,11 @@ export default function QuizPage() {
       photo: '',
       id: 0,
     },
+    drink: {
+      value: '',
+      photo: '',
+      id: 0,
+    },
     height: '',
     weight: '',
   })
@@ -82,7 +87,7 @@ export default function QuizPage() {
             {activeStep === 2 && <Weight weight={data.weight} handleStep={handleClick} />}
             {activeStep === 3 && <Body />}
             {activeStep === 4 && <Foods />}
-            {activeStep === 5 && <Drinks />}
+            {activeStep === 5 && <Drinks drink={data.drink} handleStep={handleClick}/>}
             {activeStep === 6 && <Result data={data}/>}
  
           </Container>

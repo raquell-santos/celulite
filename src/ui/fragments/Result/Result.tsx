@@ -36,6 +36,17 @@ export default function Result({data}) {
               <p className="text-lg	"> <strong>Altura:</strong> {data.height} cm </p>
               <p className="text-lg	"> <strong>Peso:</strong> {data.weight} kg </p>
           </div>
+
+          <div className="h-20 bg-pink-300 ">
+            <div className="pt-2 flex ml-4">
+            <img 
+              src={data.drink.photo} 
+              alt="bebida escolhida" 
+              className='h-20 -mt-10'
+            />
+              <p className="text-lg	"> <strong>{data.drink.text}</strong>  </p>
+            </div>
+          </div>
         </Paper>
       </div>
   )
