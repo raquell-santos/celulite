@@ -1,14 +1,11 @@
 
 import SubTitle from "../../components/SubTitle";
 import Question from "../../components/Question";
-import { Avatar, Paper } from "@material-ui/core";
+import { Avatar,Paper } from "@material-ui/core";
 
-import MATURE from '../../assets/mais-adulta.png';
-import { Title } from "@material-ui/icons";
+
 
 export default function Result({data}) {
-
-  console.log(data)
 
   return (
       <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5 mt-8">
@@ -30,9 +27,14 @@ export default function Result({data}) {
                   alt="Foto de um usuário" 
                   src={data.age.photo} 
                 />
-                <p className="mt-2 mb-4"> <strong>Idade:</strong>  {data.age.value} anos </p>
+                <div className="flex ">     
+                   <p className="mt-2 mb-4 text-lg	"> <strong>Idade:</strong>  {data.age.value} anos </p>
+                </div>
               </div>  
-
+          </div>
+          <div className="flex justify-between ml-8 mr-8 mb-12">
+              <p className="text-lg	"> <strong>Altura:</strong> {data.height} cm </p>
+              <p className="text-lg	"> <strong>Peso:</strong> {data.weight} kg </p>
           </div>
         </Paper>
       </div>

@@ -21,7 +21,11 @@ export default function QuizPage() {
       photo: '',
       id: 0,
     },
+    height: '',
+    weight: '',
   })
+
+  console.log(data)
 
   const handleClick = (info) => {
     setData((prevState) => {
@@ -30,6 +34,31 @@ export default function QuizPage() {
         ...info
       }
     })
+
+  }
+
+  const isDesabled = (): boolean => {
+    let disabled = true;
+
+
+    if(activeStep === 0) {
+      const hasAge = Boolean(data.age.value)
+      disabled = !hasAge;
+    }
+
+    if(activeStep === 1) {
+      const hasHeight = data.height;
+      disabled = !hasHeight;
+    }
+
+    if(activeStep === 2) {
+      const hasWeight = data.weight;
+      disabled = !hasWeight;
+    }
+
+    if(activeStep>2) disabled = false
+
+    return disabled;
   }
 
 
@@ -49,8 +78,8 @@ export default function QuizPage() {
           <Stepper activeStep={activeStep} steps={6} handleNext={handleNext} handleBack={handleBack}/>
           <Container>
             {activeStep === 0 && <Inicial age={data.age} handleStep={handleClick}/>}
-            {activeStep === 1 && <Height/>}
-            {activeStep === 2 && <Weight />}
+            {activeStep === 1 && <Height height={data.height} handleStep={handleClick} />}
+            {activeStep === 2 && <Weight weight={data.weight} handleStep={handleClick} />}
             {activeStep === 3 && <Body />}
             {activeStep === 4 && <Foods />}
             {activeStep === 5 && <Drinks />}
@@ -64,6 +93,7 @@ export default function QuizPage() {
               variant="contained"
               color='secondary'
               onClick={handleNext}
+              disabled={isDesabled()}
               fullWidth
             >  
               <span > Próximo </span>  

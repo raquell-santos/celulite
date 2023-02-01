@@ -3,12 +3,17 @@ import Quiz from '../Quiz';
 
 import './Height.css'
 
-export default function Height() {
+export default function Height({height, handleStep}) {
+  const handleOnChange = (event) => {
+    handleStep({height: event.target.value })
+  }
+
   return (
     <Quiz question={'Qual a sua altura?'}>
         <div className='flex justify-center mt-20'>
             <FormControl variant="standard" size='medium' fullWidth={false} focused required>
             <Input
+                defaultValue={height}
                 autoFocus
                 color='secondary'
                 id="weight-input"
@@ -17,6 +22,7 @@ export default function Height() {
                 inputProps= {{
                 'aria-label': 'weight',
                 }}        
+                onChange={handleOnChange}
             />
             <FormHelperText id="standard-weight-helper-text">Peso</FormHelperText>
             </FormControl>
