@@ -1,7 +1,7 @@
 
 import SubTitle from "../../components/SubTitle";
 import Question from "../../components/Question";
-import Card from '../../components/Card/Primary';
+import Card from '../../components/Card/Secondary';
 
 import JUICE from '../../assets/drinks/suco.png';
 import SHAKE from '../../assets/drinks/shake.png';
@@ -44,27 +44,15 @@ export default function Foods({drink, handleStep}) {
               <Card 
                 photo={drinks[0].photo} 
                 text={drinks[0].text}
-                handleClick={handleClick} 
-                id={drinks[0].id} 
-                height={'20'} 
-                isSelected={selected === drinks[0].id}
               />
               <Card 
                 photo={drinks[1].photo} 
                 text={drinks[1].text}
-                handleClick={handleClick} 
-                id={drinks[1].id} 
-                height={'20'} 
-                isSelected={selected === drinks[1].id}
               />
 
               <Card 
                 photo={drinks[2].photo} 
                 text={drinks[2].text}
-                handleClick={handleClick} 
-                id={drinks[2].id} 
-                height={'20'} 
-                isSelected={selected === drinks[2].id}
               />
           </div>
       </div>
