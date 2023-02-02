@@ -10,6 +10,7 @@ import Result from '../../fragments/Result';
 import Stepper from '../../fragments/Stepper';
 import Body from '../../fragments/Body';
 import {  Button } from "@material-ui/core";
+import Loader from "../../fragments/Loader";
 
 
 export default function QuizPage() {
@@ -27,7 +28,8 @@ export default function QuizPage() {
       id: 0,
     },
     height: 1.6,
-    weight: '',
+    weight: 70,
+    loaded: false,
   })
 
   console.log(data)
@@ -63,6 +65,10 @@ export default function QuizPage() {
 
     if(activeStep>2) disabled = false
 
+    if(activeStep === 6) {
+      disabled = !data.loaded;
+    }
+
     return disabled;
   }
 
@@ -88,7 +94,8 @@ export default function QuizPage() {
             {activeStep === 3 && <Body />}
             {activeStep === 4 && <Foods />}
             {activeStep === 5 && <Drinks drink={data.drink} handleStep={handleClick}/>}
-            {activeStep === 6 && <Result data={data}/>}
+            {activeStep === 6 && <Loader handleStep={handleClick} />}
+            {activeStep === 7 && <Result data={data}/>}
  
           </Container>
         </div>

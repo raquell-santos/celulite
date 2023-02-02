@@ -1,6 +1,33 @@
 #weight-input {
-    font-size: 70px;
+    font-size: 60px;
     color: white;
-    width: 120px;
+    width: 130px;
     text-align: center;
+}
+
+#weight-input-hint {
+    color: white !important;
+    font-size: 12px;
+}
+
+.MuiSlider-markLabel {
+    color: white !important;
+}
+
+.MuiSlider-rail {
+    width: 12px;
+}
+
+.image-height {
+    width: 200px;
+
+}
+
+.vertical-slider {
+    margin-left: -20px;
+}
+
+
+.image {
+    transform: rotateX(180deg)
 }
