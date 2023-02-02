@@ -54,7 +54,7 @@ export default function Weight({weight, handleStep}) {
       <>
         <div className='flex mt-10 mb-4 w-full h-64 justify-center'>
           <div className='flex justify-center'>
-            <div className='mr-8 flex items-center justify-center image-height '>
+            <div className='mr-8 flex items-center justify-center image-weight '>
               <img 
                 src={BALANCA}
                 alt='Balança'
@@ -91,14 +91,14 @@ export default function Weight({weight, handleStep}) {
                 endAdornment={<InputAdornment position="end"><span className='text-white text-4xl '>kg</span></InputAdornment>}
                 aria-describedby="standard-weight-helper-text"
                 inputProps= {{
-                'aria-label': 'height',
+                'aria-label': 'hweight',
                 'type': 'number',
                 }}        
                 onChange={handleOnChange}
                 disabled
                 
             />
-            <FormHelperText id="height-input-hint"> 
+            <FormHelperText id="weight-input-hint"> 
               <div className='flex justify-center text-center'>
                 <div>
                   <div>Selecione seu peso no</div> 
