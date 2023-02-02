@@ -1,6 +1,8 @@
 import { FormControl, FormHelperText, Input, InputAdornment } from '@material-ui/core';
 import Quiz from '../Quiz';
 
+import BALANCA from '../../assets/balanca.png'
+
 import './Weight.css'
 
 export default function Weight({weight, handleStep}) {
@@ -10,6 +12,11 @@ export default function Weight({weight, handleStep}) {
 
   return (
     <Quiz question={'Qual o seu peso?'}>
+      <img
+        src={BALANCA}
+      />
+
+
         <div className='flex justify-center mt-20'>
             <FormControl variant="standard" size='medium' fullWidth={false} focused required>
             <Input

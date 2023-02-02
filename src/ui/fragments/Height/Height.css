@@ -1,8 +1,13 @@
-#weight-input {
-    font-size: 70px;
+#height-input {
+    font-size: 60px;
     color: white;
-    width: 120px;
+    width: 130px;
     text-align: center;
+}
+
+#height-input-hint {
+    color: white !important;
+    font-size: 12px;
 }
 
 .MuiSlider-markLabel {

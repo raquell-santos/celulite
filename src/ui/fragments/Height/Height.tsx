@@ -1,6 +1,6 @@
 import Quiz from '../Quiz';
 import {useState} from 'react';
-import { Box } from '@material-ui/core';
+import { Box, FormControl, FormHelperText, Input, InputAdornment } from '@material-ui/core';
 import { Slider } from '@material-ui/core';
 
 import FRONT_BODY from '../../assets/body-front-120.png'
@@ -16,6 +16,12 @@ export default function Height({height, handleStep}) {
     handleStep({height: value})
     setCurrentHeight(value)
   };
+
+  const handleOnChange = (event) => {
+    const value = parseFloat(event.target.value) 
+    handleStep({height: value})
+    setCurrentHeight(value)
+  }
 
   function preventHorizontalKeyboardNavigation(event: React.KeyboardEvent) {
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
@@ -45,7 +51,8 @@ export default function Height({height, handleStep}) {
 
   return (
     <Quiz question={'Qual a sua altura?'}>
-        <div className='flex mt-10 mb-10 w-full h-64 justify-center'>
+      <>
+        <div className='flex mt-10 mb-4 w-full h-64 justify-center'>
           <div className='flex justify-center'>
             <div className='mr-8 flex items-end justify-center image-height '>
               <img 
@@ -56,9 +63,7 @@ export default function Height({height, handleStep}) {
             </div>
             <div  >
               <Slider
-                
                 orientation="vertical"
-                defaultValue={height}
                 aria-label="Altura"
                 valueLabelDisplay="auto"
                 onKeyDown={preventHorizontalKeyboardNavigation}
@@ -66,12 +71,42 @@ export default function Height({height, handleStep}) {
                 min={1.2}
                 max={2}
                 onChange={handleInputChange}
-                step={0.05}
+                step={0.01}
                 marks={marks}
+                value={currentHeight}
               />
             </div>
-            </div>
+          </div>
         </div>
+        <div className='flex justify-center '>
+          <FormControl variant="standard" size='medium' fullWidth={false} focused required>
+            <Input
+                value={currentHeight}
+                defaultValue={currentHeight}
+                autoFocus
+                color='secondary'
+                id="height-input"
+                endAdornment={<InputAdornment position="end"><span className='text-white text-4xl '>m</span></InputAdornment>}
+                aria-describedby="standard-weight-helper-text"
+                inputProps= {{
+                'aria-label': 'height',
+                'type': 'number',
+                }}        
+                onChange={handleOnChange}
+                disabled
+                
+            />
+            <FormHelperText id="height-input-hint"> 
+              <div className='flex justify-center text-center'>
+                <div>
+                  <div>Selecione sua altura no</div> 
+                  <div className='-mt-1'>slider acima</div>
+                </div>
+              </div>
+            </FormHelperText>
+            </FormControl>
+        </div>
+      </>
     </Quiz>
   )
 }
