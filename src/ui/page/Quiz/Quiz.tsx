@@ -34,7 +34,7 @@ export default function QuizPage() {
     bodies: [
       {id: 1, text: 'Peito', isChecked: false},
       {id: 2, text: 'Barriga', isChecked: false},
-      {id: 3, text: 'Quadrícps', isChecked: false},
+      {id: 3, text: 'Coxas', isChecked: false},
       {id: 4, text: 'Costas', isChecked: false},
       {id: 5, text: 'Glúteos', isChecked: false},
       {id: 6, text: 'Posterior', isChecked: false},
