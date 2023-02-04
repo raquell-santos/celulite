@@ -44,15 +44,24 @@ export default function Foods({drink, handleStep}) {
               <Card 
                 photo={drinks[0].photo} 
                 text={drinks[0].text}
+                id={drinks[0].id}
+                handleClick={handleClick}
+                selected={selected === drinks[0].id}
               />
               <Card 
                 photo={drinks[1].photo} 
                 text={drinks[1].text}
+                id={drinks[1].id}
+                handleClick={handleClick}
+                selected={selected === drinks[1].id}
               />
 
               <Card 
                 photo={drinks[2].photo} 
                 text={drinks[2].text}
+                id={drinks[2].id}
+                handleClick={handleClick}
+                selected={selected === drinks[2].id}
               />
           </div>
       </div>

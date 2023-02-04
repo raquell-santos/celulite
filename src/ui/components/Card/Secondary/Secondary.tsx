@@ -1,20 +1,18 @@
 
 
 import { CheckCircle } from '@material-ui/icons';
-import { useState } from 'react'
 import { ISecondary } from './interface'
 
-export default function Secondary({photo, text}: ISecondary) {
-  const [selected, setSelected] = useState<boolean>(false);
+export default function Secondary({photo, text, selected = false, handleClick, id }: ISecondary) {
 
-  const handleClick = () => {
-    setSelected(!selected);
+  const handleCurrentClick = () => {
+    handleClick && handleClick(id);
   }
 
   return (
     <div className="w-full flex flex-col">
       <div 
-        onClick={handleClick}
+        onClick={handleCurrentClick}
         className={`
           group rounded-lg border h-16 w-full flex items-center relative
           hover:cursor-pointer  

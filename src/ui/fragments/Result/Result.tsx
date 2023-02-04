@@ -1,11 +1,13 @@
 
 import SubTitle from "../../components/SubTitle";
 import Question from "../../components/Question";
-import { Avatar,Paper } from "@material-ui/core";
-
-
+import { Avatar,Chip,Divider,Paper } from "@material-ui/core";
+import { Check } from "@material-ui/icons";
 
 export default function Result({data}) {
+
+
+  console.log(data)
 
   return (
       <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5 mt-8">
@@ -37,15 +39,47 @@ export default function Result({data}) {
               <p className="text-lg	"> <strong>Peso:</strong> {data.weight} kg </p>
           </div>
 
-          <div className="h-20 bg-pink-300 ">
-            <div className="pt-2 flex ml-4">
-            <img 
-              src={data.drink.photo} 
-              alt="bebida escolhida" 
-              className='h-20 -mt-10'
-            />
+          <div className="h-20 bg-pink-300 flex justify-center">
+            <div className="pt-2 flex flex-col ml-4">
+              <img 
+                src={data.drink.photo} 
+                alt="bebida escolhida" 
+                className='h-20 -mt-10'
+              />
               <p className="text-lg	"> <strong>{data.drink.text}</strong>  </p>
             </div>
+          </div>
+          <div>
+
+          </div>
+          <p className="text-lg	mt-4"> <strong>Partes do corpo a serem priorizadas:</strong></p>
+
+          <div className="flex flex-wrap justify-center gap-2 mt-1 mb-4">
+            {data.bodies.filter(body => body.isChecked).map(body => {
+              return (
+                <Chip
+                  variant="outlined"
+                  label={body.text}
+                  size='small'
+                  deleteIcon={<Check/>}
+                  onDelete={() => {}}
+                />
+              )
+            })}
+          </div>
+          <Divider/>
+          <p className="text-lg	mt-4"> <strong>Alimentos a serem evitados:</strong></p>
+
+          <div className="flex flex-wrap justify-center gap-2 mt-1 mb-4">
+            {data.foods.map(food => {
+              return (
+                <Chip
+                  avatar={<Avatar alt="Natacha" src={food.photo} />}
+                  label={food.text}
+                  variant="outlined"
+                />
+              )
+            })}
           </div>
         </Paper>
       </div>

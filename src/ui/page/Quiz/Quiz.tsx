@@ -27,9 +27,18 @@ export default function QuizPage() {
       photo: '',
       id: 0,
     },
+    foods: [],
     height: 1.6,
     weight: 70,
     loaded: false,
+    bodies: [
+      {id: 1, text: 'Peito', isChecked: false},
+      {id: 2, text: 'Barriga', isChecked: false},
+      {id: 3, text: 'Quadrícps', isChecked: false},
+      {id: 4, text: 'Costas', isChecked: false},
+      {id: 5, text: 'Glúteos', isChecked: false},
+      {id: 6, text: 'Posterior', isChecked: false},
+    ]
   })
 
   console.log(data)
@@ -65,9 +74,9 @@ export default function QuizPage() {
 
     if(activeStep>2) disabled = false
 
-    if(activeStep === 6) {
-      disabled = !data.loaded;
-    }
+    // if(activeStep === 6) {
+    //   disabled = !data.loaded;
+    // }
 
     return disabled;
   }
@@ -91,8 +100,8 @@ export default function QuizPage() {
             {activeStep === 0 && <Inicial age={data.age} handleStep={handleClick}/>}
             {activeStep === 1 && <Height height={data.height} handleStep={handleClick} />}
             {activeStep === 2 && <Weight weight={data.weight} handleStep={handleClick} />}
-            {activeStep === 3 && <Body />}
-            {activeStep === 4 && <Foods />}
+            {activeStep === 3 && <Body bodies={data.bodies} handleStep={handleClick}/>}
+            {activeStep === 4 && <Foods foods={[]} handleStep={handleClick} />}
             {activeStep === 5 && <Drinks drink={data.drink} handleStep={handleClick}/>}
             {activeStep === 6 && <Loader handleStep={handleClick} />}
             {activeStep === 7 && <Result data={data}/>}
