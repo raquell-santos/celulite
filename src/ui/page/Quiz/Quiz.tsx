@@ -137,7 +137,7 @@ export default function QuizPage() {
  
           </Container>
         </div>
-          <div className="absolute fixed w-full w-screen bottom-0 flex justify-center h-16">
+          <div className="absolute fixed w-full w-screen bottom-0 flex justify-center ">
           <div className="w-full max-w-xs submit-button flex items-center">
             <Button
             className="submit-button"

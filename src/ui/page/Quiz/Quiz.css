@@ -1,3 +1,7 @@
 .submit-button > .Mui-disabled {
     background-color: #DDDE !important;
 }
+
+.submit-button {
+    margin-bottom: 8px;
+}
