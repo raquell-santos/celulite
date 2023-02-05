@@ -2,6 +2,7 @@
 import SubTitle from "../../components/SubTitle";
 import Question from "../../components/Question";
 import { Avatar,Chip,Divider,Paper } from "@material-ui/core";
+import CHA from '../../assets/drinks/cha.png'
 import { Check } from "@material-ui/icons";
 
 export default function Result({data}) {
@@ -10,15 +11,13 @@ export default function Result({data}) {
   console.log(data)
 
   return (
-      <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5 mt-8">
+      <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5 mb-8">
         <div className='flex flex-col justify-center mb-4 text-center'>
-          <Question> 
-            <div> 
-              <span>Parabens!!! </span> 
+            <div className="mb-4"> 
+              <span className="text-white mb-2 text-xl font-bold tracking-wide">Parabens!!! </span> 
               <br/>
-              <span>O seu plano para acabar com as celulites em 14 dias foi concluído. Agora você tem tudo o que precisa para nunca mais ter esses furinhos na sua pele.</span>
+              <span className="text-white text-lg">O seu plano para acabar com as celulites em <b>14 dias</b> foi concluído. Agora você tem tudo o que precisa para nunca mais ter esses furinhos na sua pele.</span>
             </div>
-          </Question>
           <SubTitle>Você é unica, a sua solução também!</SubTitle>
         </div>
         <Paper elevation={24}>
@@ -35,18 +34,26 @@ export default function Result({data}) {
               </div>  
           </div>
           <div className="flex justify-between ml-8 mr-8 mb-12">
+            <div className="flex flex-col items-start">
               <p className="text-lg	"> <strong>Altura:</strong> {data.height} cm </p>
-              <p className="text-lg	"> <strong>Peso:</strong> {data.weight} kg </p>
+              <p className="text-lg	"> <strong>Esteve Grávida?:</strong> {data.pragment ? 'Sim' : 'Não'} </p>
+            </div>
+            <div className="flex flex-col items-start">
+            <p className="text-lg	"> <strong>Peso:</strong> {data.weight} kg </p>
+              <p className="text-lg	"> <strong>Delipação:</strong> {data.hairRemoval.text} </p>
+
+            </div>
+
           </div>
 
           <div className="h-20 bg-pink-300 flex justify-center">
             <div className="pt-2 flex flex-col ml-4">
               <img 
-                src={data.drink.photo} 
+                src={CHA} 
                 alt="bebida escolhida" 
                 className='h-20 -mt-10'
               />
-              <p className="text-lg	"> <strong>{data.drink.text}</strong>  </p>
+              <p className="text-lg	"> <strong> Chá </strong>  </p>
             </div>
           </div>
           <div>
@@ -72,13 +79,16 @@ export default function Result({data}) {
 
           <div className="flex flex-wrap justify-center gap-2 mt-1 mb-4">
             {data.foods.map(food => {
-              return (
-                <Chip
-                  avatar={<Avatar alt="Natacha" src={food.photo} />}
-                  label={food.text}
-                  variant="outlined"
-                />
-              )
+
+              if(food.isChecked) {
+                return (
+                  <Chip
+                    avatar={<Avatar alt="Natacha" src={food.photo} />}
+                    label={food.text}
+                    variant="outlined"
+                  />
+                )
+              }
             })}
           </div>
         </Paper>

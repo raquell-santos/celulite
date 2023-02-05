@@ -1,16 +1,17 @@
 import { useState } from "react";
 import Container from "../../components/Container";
 import Inicial from "../../fragments/Inicial";
+import YesOrNo from '../../fragments/YesOrNo';
 import Foods from "../../fragments/Foods";
 import Height from "../../fragments/Height";
 import Weight from '../../fragments/Weight';
-import Drinks from '../../fragments/Drinks';
 import Result from '../../fragments/Result';
+import HairRemoval from '../../fragments/Drinks'
 
 import BANANA from '../../assets/foods/banana.png'
 import LEITE from '../../assets/foods/leite.png'
-import ALCOOL from '../../assets/foods/alcool.png'
-import SODA from '../../assets/foods/refrigerante.png'
+import GENGIBRE from '../../assets/foods/gengibre.png'
+import APPLE from '../../assets/foods/maca.png'
 import CHOCOLATE from '../../assets/foods/chocolate.webp'
 
 import Stepper from '../../fragments/Stepper';
@@ -24,23 +25,33 @@ import './Quiz.css';
 export default function QuizPage() {
   const [activeStep, setActiveStep] = useState(0);
 
+  const onButtonClick = () => {
+    // using Java Script method to get PDF file
+    fetch('Receita_Personalizada.pdf').then(response => {
+        response.blob().then(blob => {
+            // Creating new object of PDF file
+            const fileURL = window.URL.createObjectURL(blob);
+            // Setting various property values
+            let alink = document.createElement('a');
+            alink.href = fileURL;
+            alink.download = 'Receita_Personalizada.pdf';
+            alink.click();
+        })
+    })
+}
+
   const [data, setData] = useState({
     age: {
       value: '',
       photo: '',
       id: 0,
     },
-    drink: {
-      text: '',
-      photo: '',
-      id: 0,
-    },
     foods: [
-      { photo:ALCOOL, text:'Bebidas alcoólicas', id: 1, isChecked: false },
+      { photo:GENGIBRE, text:'Gengibre', id: 1, isChecked: false },
       { photo:BANANA, text:'Banana', id: 2, isChecked: false },
       { photo:LEITE, text:'Leite', id: 3, isChecked: false },
       { photo:CHOCOLATE, text:'Chocolate', id: 4, isChecked: false },
-      { photo:SODA, text:'Refrigerante', id: 5, isChecked: false },
+      { photo:APPLE, text:'Maça', id: 5, isChecked: false },
     ],
     height: 1.6,
     weight: 70,
@@ -52,7 +63,13 @@ export default function QuizPage() {
       {id: 4, text: 'Costas', isChecked: false},
       {id: 5, text: 'Glúteos', isChecked: false},
       {id: 6, text: 'Posterior', isChecked: false},
-    ]
+    ],
+    hairRemoval: {
+      id:'',
+      text:'',
+      photo:''
+    },
+    pregnant: undefined,
   })
 
   console.log(data)
@@ -97,15 +114,21 @@ export default function QuizPage() {
     }
 
     if(activeStep === 5 ) {
-      console.log(data.drink)
-
-      const hasDrink = data.drink.id
-      disabled = !hasDrink;
+      disabled = !(data.pregnant !== undefined);
     }
 
     if(activeStep === 6) {
+      disabled = !data.hairRemoval.id;
+    }
+
+    if(activeStep === 7) {
       disabled = !data.loaded;
     }
+
+    if(activeStep === 8) {
+      disabled = false
+    }
+
 
     return disabled;
   }
@@ -123,18 +146,20 @@ export default function QuizPage() {
 
   return (
     <div className="bg-slate-800 ">
+
         <div className="pt-8 pb-12 flex flex-col ">
-          <Stepper activeStep={activeStep} steps={6} handleNext={handleNext} handleBack={handleBack}/>
+          { activeStep !== 8 && <Stepper activeStep={activeStep} steps={7} handleNext={handleNext} handleBack={handleBack}/>}
           <Container>
             {activeStep === 0 && <Inicial age={data.age} handleStep={handleClick}/>}
             {activeStep === 1 && <Height height={data.height} handleStep={handleClick} />}
             {activeStep === 2 && <Weight weight={data.weight} handleStep={handleClick} />}
             {activeStep === 3 && <Body bodies={data.bodies} handleStep={handleClick}/>}
             {activeStep === 4 && <Foods foods={data.foods} handleStep={handleClick} />}
-            {activeStep === 5 && <Drinks drink={data.drink} handleStep={handleClick}/>}
-            {activeStep === 6 && <Loader handleStep={handleClick} />}
-            {activeStep === 7 && <Result data={data}/>}
- 
+            {activeStep === 5 && <YesOrNo pregnant={data.pregnant} handleStep={handleClick}/>}
+            {activeStep === 6 && <HairRemoval hairRemoval={data.hairRemoval} handleStep={handleClick}/>}
+            {activeStep === 7 && <Loader handleStep={handleClick} />}
+            {activeStep === 8 && <Result data={data}/>}
+
           </Container>
         </div>
         <div className="submit-button-wrapper-wrapper ">
@@ -142,11 +167,11 @@ export default function QuizPage() {
             <Button
               variant="contained"
               color='secondary'
-              onClick={handleNext}
+              onClick={activeStep === 8 ? onButtonClick : handleNext}
               disabled={isDesabled()}
               fullWidth
             >  
-              <span > Próximo </span>  
+              <span > {activeStep === 8 ? 'Download Programa' : 'Próximo'} </span>  
             </Button>
         </div>
         </div>

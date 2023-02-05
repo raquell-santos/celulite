@@ -38,7 +38,17 @@ export default function Loader({handleStep}) {
     <div id="coaster"></div>
 </div>
 
-<footer>Aguarde enquanto finalizamos <br/>sua bebida personalizada...</footer>
+<footer className='flex justify-center align-center text-center text-white mb-3 text-xl font-bold tracking-wide'>
+    {
+    (loaded >= 0 && loaded!== 100)
+        ? <span>    Aguarde enquanto finalizamos <br/>seu programa personalizado... </span>
+        : <span>    Seu programa está pronto!  </span>
+}
+    
+
+    
+    
+    </footer>
     
 </>
 }

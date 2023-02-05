@@ -9,7 +9,7 @@ import SubTitle from '../../components/SubTitle';
 export default function Body({bodies, handleStep, }) {
 
   const PRE_FILL_COLOR = 'inherit';
-  const FILL_COLOR = '#F50157';
+  const FILL_COLOR = 'inherit';
   const STROKE_COLOR = '#F50157';
 
   const MAP = {

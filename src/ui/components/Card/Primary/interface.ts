@@ -5,4 +5,5 @@ export interface IPrimary {
     handleClick: any;
     id: number;
     height?: string;
+    color?: string
 }

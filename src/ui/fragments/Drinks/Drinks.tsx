@@ -3,18 +3,22 @@ import SubTitle from "../../components/SubTitle";
 import Question from "../../components/Question";
 import Card from '../../components/Card/Secondary';
 
-import JUICE from '../../assets/drinks/suco.png';
-import SHAKE from '../../assets/drinks/shake.png';
-import CHA from '../../assets/drinks/cha.png';
+import CERA from '../../assets/hairRemoval/cera.png';
+import GILETE from '../../assets/hairRemoval/gilete.png';
+import CREME from '../../assets/hairRemoval/creme.png';
+import LASER from '../../assets/hairRemoval/laser.png';
+
+
 import { useState } from "react";
 
-export default function Foods({drink, handleStep}) {
-  const [selected, setSelected] = useState<number>(drink.id)
+export default function Foods({hairRemoval, handleStep}) {
+  const [selected, setSelected] = useState<number>(hairRemoval.id)
 
   const drinks = [
-    { id: 1, photo: SHAKE, text: 'Vitamina'}, 
-    { id: 2, photo: JUICE, text: 'Suco'}, 
-    { id: 3, photo: CHA, text: 'Chá'}, 
+    { id: 1, photo: CERA, text: 'Cera'}, 
+    { id: 2, photo: GILETE, text: 'Lâmina'}, 
+    { id: 3, photo: CREME, text: 'Creme depilatório'}, 
+    { id: 4, photo: LASER, text: 'Laser'}, 
   ]
 
   const handleClick = (id: number): void => {
@@ -24,7 +28,7 @@ export default function Foods({drink, handleStep}) {
 
     if(selectedDrink.length) {
       handleStep({
-        drink: {
+        hairRemoval: {
           text: selectedDrink[0].text,
           photo: selectedDrink[0].photo,
           id: selectedDrink[0].id,
@@ -36,7 +40,7 @@ export default function Foods({drink, handleStep}) {
   return (
       <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5 mt-8">
         <div className='flex flex-col justify-center mb-4 text-center'>
-          <Question> Qual tipo de bebida você prefere? </Question>
+          <Question> Qual o tipo mais comum de depilação que você utiliza? </Question>
           <SubTitle>Você é unica, a sua solução também!</SubTitle>
         </div>
 
@@ -62,6 +66,14 @@ export default function Foods({drink, handleStep}) {
                 id={drinks[2].id}
                 handleClick={handleClick}
                 selected={selected === drinks[2].id}
+              />
+
+              <Card 
+                photo={drinks[3].photo} 
+                text={drinks[3].text}
+                id={drinks[3].id}
+                handleClick={handleClick}
+                selected={selected === drinks[3].id}
               />
           </div>
       </div>
