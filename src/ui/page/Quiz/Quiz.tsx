@@ -123,7 +123,7 @@ export default function QuizPage() {
 
   return (
     <div className="bg-slate-800 ">
-        <div className="pt-8 pb-8 h-screen flex flex-col ">
+        <div className="pt-8 pb-12 flex flex-col ">
           <Stepper activeStep={activeStep} steps={6} handleNext={handleNext} handleBack={handleBack}/>
           <Container>
             {activeStep === 0 && <Inicial age={data.age} handleStep={handleClick}/>}
@@ -137,10 +137,9 @@ export default function QuizPage() {
  
           </Container>
         </div>
-          <div className="absolute fixed w-full w-screen bottom-0 flex justify-center ">
-          <div className="w-full max-w-xs submit-button flex items-center">
+        <div className="submit-button-wrapper-wrapper ">
+          <div className="submit-button-wrapper">
             <Button
-            className="submit-button"
               variant="contained"
               color='secondary'
               onClick={handleNext}
@@ -149,7 +148,7 @@ export default function QuizPage() {
             >  
               <span > Próximo </span>  
             </Button>
-          </div>
+        </div>
         </div>
         </div>
   )

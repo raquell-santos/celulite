@@ -1,7 +1,20 @@
-.submit-button > .Mui-disabled {
+.submit-button-wrapper > .Mui-disabled {
     background-color: #DDDE !important;
 }
 
-.submit-button {
-    margin-bottom: 8px;
+.submit-button-wrapper-wrapper {
+    display: flex;
+    justify-content: center;    
+    justify-items: center;
+    align-items: center;
+    position:fixed;
+    bottom: 0px;
+    height: 70px;
+    width: 100%;
+    background-color: #1E293B;
+}
+
+
+.submit-button-wrapper  {
+    width: 80%;
 }
