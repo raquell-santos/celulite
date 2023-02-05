@@ -1,16 +1,21 @@
 import { CheckCircle } from '@material-ui/icons'
 import { IPrimary} from './interface'
 
-export default function Primary({photo, text, isSelected = false, handleClick, id, height, color = 'material-pink'}: IPrimary) {
+export default function Primary({photo, text, isSelected = false, handleClick, id, height, color = 'material-pink'}: IPrimary) {  
+  const className = color === 'material-pink' 
+    ? `group rounded-t border-material-pink border-2 ${height ? `h-${height}` : 'h-28' } w-full shadow-md shadow-slate-200 flex justify-center 
+    hover:cursor-pointer hover:bg-slate-900 relative
+    ${isSelected ? 'bg-slate-900': ''} `
+    : `group rounded-t border-green-500 border-2 ${height ? `h-${height}` : 'h-28' } w-full shadow-md shadow-slate-200 flex justify-center 
+    hover:cursor-pointer hover:bg-slate-900 relative
+    ${isSelected ? 'bg-slate-900': ''} `
+  
+  
   return (
     <div className="flex flex-col w-full">
       <div 
         onClick={() => handleClick(id)}
-        className={`
-          group rounded-t border-${color} border-2 ${height ? `h-${height}` : 'h-28' } w-full shadow-md shadow-slate-200 flex justify-center 
-          hover:cursor-pointer hover:bg-slate-900 relative
-          ${isSelected ? 'bg-slate-900': ''}
-        `}
+        className={className}
       >
         {isSelected && <CheckCircle style={{position: 'absolute', top: 8, right: 12}} color='secondary'/>}
           <div className='flex flex-col'>
@@ -24,11 +29,22 @@ export default function Primary({photo, text, isSelected = false, handleClick, i
               `}/>
           </div>
       </div>
-      <div className={`flex justify-center h-full w-full bg-${color} rounded-b`}> 
-        <p className='text-white font-semibold tracking-wider uppercase letter-spacing'>
-          {text}
-        </p>
-      </div>
+
+      {
+        color === 'material-pink' 
+          ? <div className={`flex justify-center h-full w-full bg-material-pink  rounded-b`}> 
+              <p className='text-white font-semibold tracking-wider uppercase letter-spacing'>
+                {text}
+              </p>
+            </div>
+          : <div className={`flex justify-center h-full w-full bg-green-500 rounded-b`}> 
+              <p className='text-white font-semibold tracking-wider uppercase letter-spacing'>
+                {text}
+              </p>
+            </div>
+      }
+
+
     </div>
   )
 }

@@ -37,11 +37,8 @@ export default function Result({data}) {
             <div className="flex flex-col items-start">
               <p className="text-lg	"> <strong>Altura:</strong> {data.height} cm </p>
               <p className="text-lg	"> <strong>Esteve Grávida?:</strong> {data.pragment ? 'Sim' : 'Não'} </p>
-            </div>
-            <div className="flex flex-col items-start">
-            <p className="text-lg	"> <strong>Peso:</strong> {data.weight} kg </p>
+              <p className="text-lg	"> <strong>Peso:</strong> {data.weight} kg </p>
               <p className="text-lg	"> <strong>Delipação:</strong> {data.hairRemoval.text} </p>
-
             </div>
 
           </div>

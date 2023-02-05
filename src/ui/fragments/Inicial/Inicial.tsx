@@ -55,6 +55,8 @@ export default function Inicial({age, handleStep}) {
                 id={cards[1].id} 
                 handleClick={handleClick}  
                 isSelected={selected === cards[1].id}
+
+
               />
             </div>
             <div className='flex gap-x-4 '>
