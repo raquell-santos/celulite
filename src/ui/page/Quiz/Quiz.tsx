@@ -123,7 +123,7 @@ export default function QuizPage() {
 
   return (
     <div className="bg-slate-800 ">
-        <div className="pt-8 pb-16 h-screen flex flex-col ">
+        <div className="pt-8 pb-8 h-screen flex flex-col ">
           <Stepper activeStep={activeStep} steps={6} handleNext={handleNext} handleBack={handleBack}/>
           <Container>
             {activeStep === 0 && <Inicial age={data.age} handleStep={handleClick}/>}
