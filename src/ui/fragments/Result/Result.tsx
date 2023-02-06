@@ -34,9 +34,9 @@ export default function Result({data}) {
                 </div>
               </div>  
           </div>
-          <div className="flex justify-between ml-8 mr-8 mb-12">
+          <div className="flex justify-between ml-8 mr-8 mb-20">
             <div className="flex flex-col items-start">
-              <p className="text-base"> <strong>Altura:</strong> {data.height} cm </p>
+              <p className="text-base"> <strong>Altura:</strong> {data.height} m </p>
               <p className="text-base"> <strong>Peso:</strong> {data.weight} kg </p>
               <p className="text-base"> <strong>Celulites:</strong> {data.pragment ? 'Mais de 1 ano' : 'Menos de 1 ano'} </p>
               <p className="text-base"> <strong>Delipação:</strong> {data.hairRemoval.text} </p>
@@ -44,12 +44,12 @@ export default function Result({data}) {
 
           </div>
 
-          <div className="h- bg-material-pink flex justify-center">
+          <div className="bg-material-pink flex justify-center">
             <div className="pt-2 flex flex-col ml-4">
               <img 
                 src={LOGO_CHA} 
                 alt="bebida escolhida" 
-                className='h-36 -mt-16'
+                className='h-32 -mt-20'
               />
               {/* <p className="text-lg	white"> <strong> Chá </strong>  </p> */}
             </div>
