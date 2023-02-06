@@ -4,6 +4,7 @@ import Question from "../../components/Question";
 import { Avatar,Chip,Divider,Paper } from "@material-ui/core";
 import CHA from '../../assets/drinks/cha.png'
 import { Check } from "@material-ui/icons";
+import LOGO_CHA from '../../assets/logo-cha.png'
 
 export default function Result({data}) {
 
@@ -33,25 +34,26 @@ export default function Result({data}) {
                 </div>
               </div>  
           </div>
-          <div className="flex justify-between ml-8 mr-8 mb-12">
+          <div className="flex justify-between ml-8 mr-8 mb-8">
             <div className="flex flex-col items-start">
-              <p className="text-lg	"> <strong>Altura:</strong> {data.height} cm </p>
-              <p className="text-lg	"> <strong>Esteve Grávida?:</strong> {data.pragment ? 'Sim' : 'Não'} </p>
-              <p className="text-lg	"> <strong>Peso:</strong> {data.weight} kg </p>
-              <p className="text-lg	"> <strong>Delipação:</strong> {data.hairRemoval.text} </p>
+              <p className="text-base"> <strong>Altura:</strong> {data.height} cm </p>
+              <p className="text-base"> <strong>Celulites:</strong> {data.pragment ? 'Mais de 1 ano' : 'Menos de 1 ano'} </p>
+              <p className="text-base"> <strong>Peso:</strong> {data.weight} kg </p>
+              <p className="text-base"> <strong>Delipação:</strong> {data.hairRemoval.text} </p>
+            </div>
+            <div className="pt-2 flex flex-col ml-4">
+              <img 
+                src={LOGO_CHA} 
+                alt="bebida escolhida" 
+                className='h-24 -mt-4'
+              />
+              <p className="text-lg	"> <strong> Chá </strong>  </p>
             </div>
 
           </div>
 
-          <div className="h-20 bg-pink-300 flex justify-center">
-            <div className="pt-2 flex flex-col ml-4">
-              <img 
-                src={CHA} 
-                alt="bebida escolhida" 
-                className='h-20 -mt-10'
-              />
-              <p className="text-lg	"> <strong> Chá </strong>  </p>
-            </div>
+          <div className="h-4 bg-material-pink flex justify-center">
+
           </div>
           <div>
 

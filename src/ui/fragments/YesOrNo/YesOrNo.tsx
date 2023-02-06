@@ -21,7 +21,7 @@ export default function YesOrNo({pregnant = undefined, handleStep}) {
   return (
     <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5 mt-8">
       <div className='flex flex-col justify-center mb-4 text-center'>
-        <Question> Você já esteve grávida em algum momento da sua vida? </Question>
+        <Question> Faz mais de um ano que você sofre com suas celulites? </Question>
         <SubTitle> Você é unica, a sua solução também! </SubTitle>
       </div>
           <div className="flex flex-col gap-y-7 justify-center">
