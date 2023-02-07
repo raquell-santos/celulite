@@ -7,10 +7,6 @@ import { Check } from "@material-ui/icons";
 import LOGO_CHA from '../../assets/logo-cha.png'
 
 export default function Result({data}) {
-
-
-  console.log(data)
-
   return (
       <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5 mb-8">
         <div className='flex flex-col justify-center mb-4 text-center'>

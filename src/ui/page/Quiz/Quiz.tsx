@@ -111,12 +111,12 @@ export default function QuizPage() {
     }
 
     if(activeStep === 4 ) {
-      const hasFoods = data.activities.filter(food => food.isChecked).filter(i=>i).length > 0
-      disabled = !hasFoods;
+      disabled = !(data.pregnant !== undefined);
     }
 
     if(activeStep === 5 ) {
-      disabled = !(data.pregnant !== undefined);
+      const hasFoods = data.activities.filter(food => food.isChecked).filter(i=>i).length > 0
+      disabled = !hasFoods;
     }
 
     if(activeStep === 6) {
@@ -156,10 +156,10 @@ export default function QuizPage() {
             {activeStep === 1 && <Height height={data.height} handleStep={handleClick} />}
             {activeStep === 2 && <Weight weight={data.weight} handleStep={handleClick} />}
             {activeStep === 3 && <Body bodies={data.bodies} handleStep={handleClick}/>}
-            {activeStep === 4 && <Foods activities={data.activities} handleStep={handleClick} />}
-            {activeStep === 5 && <YesOrNo pregnant={data.pregnant} handleStep={handleClick}/>}
+            {activeStep === 4 && <YesOrNo pregnant={data.pregnant} handleStep={handleClick}/>}
+            {activeStep === 5 && <Foods activities={data.activities} handleStep={handleClick} />}
             {activeStep === 6 && <Stress stress={data.stress} handleStep={handleClick}/>}
-            {activeStep === 7 && <Loader handleStep={handleClick} />}
+            {activeStep === 7 && <Loader handleStep={handleClick} />} 
             {activeStep === 8 && <Result data={data}/>}
 
           </Container>
