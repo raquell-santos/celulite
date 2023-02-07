@@ -72,16 +72,16 @@ export default function Result({data}) {
             })}
           </div>
           <Divider/>
-          <p className="text-lg	mt-4"> <strong>Alimentos a serem evitados:</strong></p>
+          <p className="text-lg	mt-4"> <strong>Atividades físicas:</strong></p>
 
           <div className="flex flex-wrap justify-center gap-2 mt-1 mb-4">
-            {data.foods.map(food => {
+            {data.activities.map(activity => {
 
-              if(food.isChecked) {
+              if(activity.isChecked) {
                 return (
                   <Chip
-                    avatar={<Avatar alt="Natacha" src={food.photo} />}
-                    label={food.text}
+                    avatar={<Avatar alt="Natacha" src={activity.photo} />}
+                    label={activity.text}
                     variant="outlined"
                   />
                 )

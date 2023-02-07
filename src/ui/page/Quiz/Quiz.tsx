@@ -2,19 +2,18 @@ import { useState } from "react";
 import Container from "../../components/Container";
 import Inicial from "../../fragments/Inicial";
 import YesOrNo from '../../fragments/YesOrNo';
-import Foods from "../../fragments/Foods";
+import Foods from "../../fragments/PhysicalActivity";
 import Height from "../../fragments/Height";
 import Weight from '../../fragments/Weight';
 import Result from '../../fragments/Result';
-import HairRemoval from '../../fragments/Drinks'
 
 import Stress from '../../fragments/Stress';
 
-import BANANA from '../../assets/foods/banana.png'
-import LEITE from '../../assets/foods/leite.png'
-import GENGIBRE from '../../assets/foods/gengibre.png'
-import APPLE from '../../assets/foods/maca.png'
-import CHOCOLATE from '../../assets/foods/chocolate.webp'
+import PEGADA from '../../assets/pegada.png'
+import ERROR from '../../assets/x.png'
+import HALTERES from '../../assets/halteres.png'
+import BOIA from '../../assets/boia.png'
+import DANCA from '../../assets/musica.png'
 
 import Stepper from '../../fragments/Stepper';
 import Body from '../../fragments/Body';
@@ -48,12 +47,12 @@ export default function QuizPage() {
       photo: '',
       id: 0,
     },
-    foods: [
-      { photo:GENGIBRE, text:'Gengibre', id: 1, isChecked: false },
-      { photo:BANANA, text:'Banana', id: 2, isChecked: false },
-      { photo:LEITE, text:'Leite', id: 3, isChecked: false },
-      { photo:CHOCOLATE, text:'Chocolate', id: 4, isChecked: false },
-      { photo:APPLE, text:'Maça', id: 5, isChecked: false },
+    activities: [
+      { photo:HALTERES, text:'Musculação / Crossfit', id: 1, isChecked: false },
+      { photo:PEGADA, text:'Caminhada', id: 2, isChecked: false },
+      { photo:BOIA, text:'Natação', id: 3, isChecked: false },
+      { photo:DANCA, text:'Dança', id: 4, isChecked: false },
+      { photo:ERROR, text:'Não pratico atividade física', id: 5, isChecked: false },
     ],
     height: 1.6,
     weight: 70,
@@ -112,7 +111,7 @@ export default function QuizPage() {
     }
 
     if(activeStep === 4 ) {
-      const hasFoods = data.foods.filter(food => food.isChecked).filter(i=>i).length > 0
+      const hasFoods = data.activities.filter(food => food.isChecked).filter(i=>i).length > 0
       disabled = !hasFoods;
     }
 
@@ -157,7 +156,7 @@ export default function QuizPage() {
             {activeStep === 1 && <Height height={data.height} handleStep={handleClick} />}
             {activeStep === 2 && <Weight weight={data.weight} handleStep={handleClick} />}
             {activeStep === 3 && <Body bodies={data.bodies} handleStep={handleClick}/>}
-            {activeStep === 4 && <Foods foods={data.foods} handleStep={handleClick} />}
+            {activeStep === 4 && <Foods activities={data.activities} handleStep={handleClick} />}
             {activeStep === 5 && <YesOrNo pregnant={data.pregnant} handleStep={handleClick}/>}
             {activeStep === 6 && <Stress stress={data.stress} handleStep={handleClick}/>}
             {activeStep === 7 && <Loader handleStep={handleClick} />}
