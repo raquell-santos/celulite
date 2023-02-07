@@ -6,6 +6,7 @@ import ADULT from '../../assets/adulta.png'
 import MATURE from '../../assets/mais-adulta.png'
 import OLD from '../../assets/idosa.png'
 import { useState } from "react";
+import LOGO from '../../assets/logo.png'
 
 export default function Inicial({age, handleStep}) {
   const [selected, setSelected] = useState<number>(age.id)
@@ -36,8 +37,15 @@ export default function Inicial({age, handleStep}) {
   return (
       <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5 mt-4">
         <h1 className="text-white text-4xl font-extrabold tracking-wide uppercase"> 
-          Acabe com suas celulites
+          Programa 0 celulite
         </h1>
+        <div className='flex justify-center'>
+          <img 
+            src={LOGO}
+            alt='logo'
+            width={120}
+          />
+        </div>
         <Titles> Qual sua idade? </Titles>
           <div className="flex flex-col gap-y-7 justify-center">
             <div className='flex gap-x-4 '>
