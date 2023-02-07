@@ -15,8 +15,8 @@ export default function Foods({foods, handleStep}) {
   return (
       <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5 mt-8">
         <div className='flex flex-col justify-center mb-4 text-center'>
-          <Question> Quais desses alimentos você não gosta e quer tirar da sua bebida? </Question>
-          <SubTitle>Você é unica, a sua solução também!</SubTitle>
+          <Question> Quais desses alimentos você não gosta e quer tirar do seu chá? </Question>
+          <SubTitle> Você é unica, a sua solução também! </SubTitle>
         </div>
 
           <div className="flex flex-col gap-x-3.5 gap-y-6 mb-8">

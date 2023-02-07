@@ -17,7 +17,7 @@ export default function Result({data}) {
             <div className="mb-4"> 
               <span className="text-white mb-2 text-xl font-bold tracking-wide">Parabens!!! </span> 
               <br/>
-              <span className="text-white text-lg">O seu plano para acabar com as celulites em <b>14 dias</b> foi concluído. Agora você tem tudo o que precisa para nunca mais ter esses furinhos na sua pele.</span>
+              <span className="text-white text-lg">O seu projeto para acabar com as celulites em <b>14 dias</b> foi concluído. <br/> Agora você tem tudo o que precisa para nunca mais ter esses furinhos na sua pele.</span>
             </div>
           <SubTitle>Você é unica, a sua solução também!</SubTitle>
         </div>
@@ -39,7 +39,6 @@ export default function Result({data}) {
               <p className="text-base"> <strong>Altura:</strong> {data.height} m </p>
               <p className="text-base"> <strong>Peso:</strong> {data.weight} kg </p>
               <p className="text-base"> <strong>Celulites:</strong> {data.pragment ? 'Mais de 1 ano' : 'Menos de 1 ano'} </p>
-              <p className="text-base"> <strong>Saúde mental:</strong> {data.stress ? 'negativa' : 'positiva'} </p>
             </div>
 
           </div>

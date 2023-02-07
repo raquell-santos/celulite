@@ -41,8 +41,8 @@ export default function Loader({handleStep}) {
 <footer className='flex justify-center align-center text-center text-white mb-3 text-xl font-bold tracking-wide'>
     {
     (loaded >= 0 && loaded!== 100)
-        ? <span>    Aguarde enquanto finalizamos <br/>seu programa personalizado... </span>
-        : <span>    Seu programa está pronto!  </span>
+        ? <span>    Aguarde enquanto finalizamos <br/>seu projeto personalizado... </span>
+        : <span>    Seu projeto está pronto!  </span>
 }
     
 
