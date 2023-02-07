@@ -8,6 +8,8 @@ import Weight from '../../fragments/Weight';
 import Result from '../../fragments/Result';
 import HairRemoval from '../../fragments/Drinks'
 
+import Stress from '../../fragments/Stress';
+
 import BANANA from '../../assets/foods/banana.png'
 import LEITE from '../../assets/foods/leite.png'
 import GENGIBRE from '../../assets/foods/gengibre.png'
@@ -70,6 +72,7 @@ export default function QuizPage() {
       photo:''
     },
     pregnant: undefined,
+    stress: undefined,
   })
 
   console.log(data)
@@ -118,7 +121,7 @@ export default function QuizPage() {
     }
 
     if(activeStep === 6) {
-      disabled = !data.hairRemoval.id;
+      disabled = !(data.stress !== undefined);
     }
 
     if(activeStep === 7) {
@@ -156,7 +159,7 @@ export default function QuizPage() {
             {activeStep === 3 && <Body bodies={data.bodies} handleStep={handleClick}/>}
             {activeStep === 4 && <Foods foods={data.foods} handleStep={handleClick} />}
             {activeStep === 5 && <YesOrNo pregnant={data.pregnant} handleStep={handleClick}/>}
-            {activeStep === 6 && <HairRemoval hairRemoval={data.hairRemoval} handleStep={handleClick}/>}
+            {activeStep === 6 && <Stress stress={data.stress} handleStep={handleClick}/>}
             {activeStep === 7 && <Loader handleStep={handleClick} />}
             {activeStep === 8 && <Result data={data}/>}
 

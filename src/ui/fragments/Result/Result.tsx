@@ -39,7 +39,7 @@ export default function Result({data}) {
               <p className="text-base"> <strong>Altura:</strong> {data.height} m </p>
               <p className="text-base"> <strong>Peso:</strong> {data.weight} kg </p>
               <p className="text-base"> <strong>Celulites:</strong> {data.pragment ? 'Mais de 1 ano' : 'Menos de 1 ano'} </p>
-              <p className="text-base"> <strong>Delipação:</strong> {data.hairRemoval.text} </p>
+              <p className="text-base"> <strong>Saúde mental:</strong> {data.stress ? 'negativa' : 'positiva'} </p>
             </div>
 
           </div>
