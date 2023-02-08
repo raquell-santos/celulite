@@ -32,19 +32,19 @@ export default function Height({height, handleStep}) {
 
   const marks = [
     {
-      value: 2,
+      value: 2.00,
       label: '+ 2,00 m ',
     },
     {
-      value: 1.5,
+      value: 1.50,
       label: '1,50 m',
     },
     {
-      value: 1.7,
+      value: 1.70,
       label: '1,70 m',
     },
     {
-      value: 1.2,
+      value: 1.20,
       label: '- 1,20 m',
     },
   ];

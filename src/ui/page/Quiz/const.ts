@@ -18,7 +18,7 @@ const formData = {
       { photo: DANCA, text:'Dança', id: 4, isChecked: false },
       { photo: ERROR, text:'Não pratico atividade física', id: 5, isChecked: false },
     ],
-    height: 1.6,
+    height: 1.41,
     weight: 70,
     loaded: false,
     bodies: [
