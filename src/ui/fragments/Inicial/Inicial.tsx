@@ -36,9 +36,6 @@ export default function Inicial({age, handleStep}) {
 
   return (
       <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5 mt-4">
-        <h1 className="text-white text-4xl font-extrabold tracking-wide uppercase"> 
-          Programa zero celulite
-        </h1>
         <div className='flex justify-center'>
           <img 
             src={LOGO}
@@ -46,6 +43,9 @@ export default function Inicial({age, handleStep}) {
             width={120}
           />
         </div>
+        <h1 className="text-white text-4xl font-extrabold tracking-wide uppercase"> 
+          Programa zero celulite
+        </h1>
         <Titles> Qual sua idade? </Titles>
           <div className="flex flex-col gap-y-7 justify-center">
             <div className='flex gap-x-4 '>

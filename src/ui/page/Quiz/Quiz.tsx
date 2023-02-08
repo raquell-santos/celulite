@@ -173,7 +173,7 @@ export default function QuizPage() {
               disabled={isDesabled()}
               fullWidth
             >  
-              <span > {activeStep === 8 ? 'Baixar meu projeto ' : 'Próximo'} </span>  
+              <span > {activeStep === 8 ? 'Baixar meu programa ' : 'Próximo'} </span>  
             </Button>
         </div>
         </div>

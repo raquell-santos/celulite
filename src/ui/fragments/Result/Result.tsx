@@ -13,7 +13,7 @@ export default function Result({data}) {
             <div className="mb-4"> 
               <span className="text-white mb-2 text-xl font-bold tracking-wide">Parabens!!! </span> 
               <br/>
-              <span className="text-white text-lg">O seu projeto para acabar com as celulites em <b>14 dias</b> foi concluído. <br/> Agora você tem tudo o que precisa para nunca mais ter esses furinhos na sua pele.</span>
+              <span className="text-white text-lg">O seu programa para acabar com as celulites em <b>14 dias</b> foi concluído. <br/> Agora você tem tudo o que precisa para nunca mais ter esses furinhos na sua pele.</span>
             </div>
           <SubTitle>Você é unica, a sua solução também!</SubTitle>
         </div>
