@@ -37,7 +37,7 @@ export default function Inicial({age, handleStep}) {
   return (
       <div className="flex flex-col text-center gap-x-2.5 gap-y-2.5 mt-4">
         <h1 className="text-white text-4xl font-extrabold tracking-wide uppercase"> 
-          Programa 0 celulite
+          Programa zero celulite
         </h1>
         <div className='flex justify-center'>
           <img 
