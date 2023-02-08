@@ -33,19 +33,19 @@ export default function Height({height, handleStep}) {
   const marks = [
     {
       value: 2,
-      label: '2,0+ m ',
+      label: '+ 2,00 m ',
     },
     {
       value: 1.5,
-      label: '1,5 m',
+      label: '1,50 m',
     },
     {
       value: 1.7,
-      label: '1,7 m',
+      label: '1,70 m',
     },
     {
       value: 1.2,
-      label: '1,2- m',
+      label: '- 1,20 m',
     },
   ];
 
@@ -68,8 +68,8 @@ export default function Height({height, handleStep}) {
                 valueLabelDisplay="auto"
                 onKeyDown={preventHorizontalKeyboardNavigation}
                 color='secondary'
-                min={1.2}
-                max={2}
+                min={1.20}
+                max={2.00}
                 onChange={handleInputChange}
                 step={0.01}
                 marks={marks}
