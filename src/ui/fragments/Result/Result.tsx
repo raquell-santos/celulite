@@ -1,8 +1,6 @@
 
 import SubTitle from "../../components/SubTitle";
-import Question from "../../components/Question";
 import { Avatar,Chip,Divider,Paper } from "@material-ui/core";
-import CHA from '../../assets/drinks/cha.png'
 import { Check } from "@material-ui/icons";
 import LOGO_CHA from '../../assets/logo-cha.png'
 
@@ -71,7 +69,7 @@ export default function Result({data}) {
           <p className="text-lg	mt-4"> <strong>Atividades físicas:</strong></p>
 
           <div className="flex flex-wrap justify-center gap-2 mt-1 mb-4">
-            {data.activities.map(activity => {
+            {data.activities.map((activity) => {
 
               if(activity.isChecked) {
                 return (

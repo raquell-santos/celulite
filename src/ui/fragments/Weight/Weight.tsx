@@ -1,6 +1,6 @@
 import Quiz from '../Quiz';
 import {useState} from 'react';
-import { Box, FormControl, FormHelperText, Input, InputAdornment } from '@material-ui/core';
+import { FormControl, FormHelperText, Input, InputAdornment } from '@material-ui/core';
 import { Slider } from '@material-ui/core';
 
 import BALANCA from '../../assets/balanca.png'

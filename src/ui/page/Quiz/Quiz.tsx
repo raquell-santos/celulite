@@ -18,24 +18,14 @@ import Loader from "../../fragments/Loader";
 
 import './Quiz.css';
 
+import generatePdf from "../../../lib/pdf/pdf";
 
 export default function QuizPage() {
   const [activeStep, setActiveStep] = useState(0);
 
   const onButtonClick = () => {
-    // using Java Script method to get PDF file
-    fetch('Receita_Personalizada.pdf').then(response => {
-        response.blob().then(blob => {
-            // Creating new object of PDF file
-            const fileURL = window.URL.createObjectURL(blob);
-            // Setting various property values
-            let alink = document.createElement('a');
-            alink.href = fileURL;
-            alink.download = 'Receita_Personalizada.pdf';
-            alink.click();
-        })
-    })
-}
+    generatePdf();
+  }
 
   const [data, setData] = useState(formData)
 
