@@ -20,7 +20,7 @@
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
-  "homepage": "https://celulites.site/",
+  "homepage": "https://raquell-santos.github.io/celulite",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
